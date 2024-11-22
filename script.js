@@ -4,6 +4,8 @@ function isValidDate(date) {
   if (regex.test(date) === false) {
     return false; // Si le format est incorrect, retourner false
   }
+  //return true;
 }
-console.log(isValidDate(13568888));
-console.log(isValidDate("12/11/2024")); // undefined
+//format date :
+//console.log(isValidDate(13568888));
+//console.log(isValidDate("12/11/2024"));
