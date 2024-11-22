@@ -18,6 +18,30 @@ function isValidDate(date) {
   }
   //return true;
 }
+
+function maxDaysInMonth(month, year) {
+  if (month === 2) {
+    if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
+      return 29;
+    } else {
+      return 28;
+    }
+  }
+  if (month === 4 || month === 6 || month === 9 || month === 11) {
+    return 30;
+  }
+  return 31;
+}
+
+function isDateValid(day, month, year) {
+  const maxDays = maxDaysInMonth(month, year);
+  if (day > 0 && day <= maxDays) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 //format date :
 //console.log(isValidDate(13568888));
 //console.log(isValidDate("12/11/2024"));
@@ -25,3 +49,8 @@ function isValidDate(date) {
 //vérification des mois/années
 //console.log(isValidDate("05/14/2024"));
 //console.log(isValidDate("18/02/1987"));
+
+//vérif nbr jour dans le mois est valide
+//console.log(isDateValid(29, 2, 2024));
+//console.log(isDateValid(31, 11, 2023));
+//console.log(isDateValid(18, 2, 1987));
